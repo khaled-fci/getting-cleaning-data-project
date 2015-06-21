@@ -1,11 +1,11 @@
 #Steps
 ##Step 1
-	###Load libraries:
+	Load libraries:
 		a. data.table
 		b. dplyr
 		
 ##Step 2
-	###Read below files:
+	Read below files:
 		a. features.txt
 		b. X_train.txt
 		c. Y_train.txt
@@ -29,16 +29,10 @@
 	c. Filter "data" table to keep columns above
 
 ##Step 5
-	###Map "Activity" values as follows:
+	Map "Activity" values as follows:
 		a. 1 -> WALKING
 		b. 2 -> WALKING_UPSTAIRS
 		c. 3 -> WALKING_DOWNSTAIRS
 		d. 4 -> SITTING
 		e. 5 -> STANDING
 		f. 6 -> LAYING
-
-		b. 
-		c. 
-		d. 
-		e. 
-		f. 
