@@ -8,6 +8,8 @@ featuresVect <- as.vector(featuresDF[,2])
 featuresVect <- append("Activity", featuresVect)
 featuresVect <- append("Subject", featuresVect)
 
+activityLabelsDF <- read.table("./data/activity_labels.txt")
+
 xTrain <- read.table("./data/train/X_train.txt")
 
 yTrain <- read.table("./data/train/Y_train.txt")
@@ -31,11 +33,9 @@ data <- rbind(train, test)
 
 colnames(data) <- featuresVect
 
-keepCols <- grepl("Activity|Subject|.*?-mean\\(.*|.*?-std\\(.*", featuresVect)
+keepCols <- grepl("Activity|Subject|.*?-mean.*|.*?-std.*", featuresVect)
 
 data <- data[keepCols]
-
-activityLabelsDF <- read.table("./data/activity_labels.txt")
 
 data$Activity <- mapvalues(data$Activity, from=activityLabelsDF[,1], to=as.vector(activityLabelsDF[,2]))
 
