@@ -36,3 +36,6 @@
 		d. 4 -> SITTING
 		e. 5 -> STANDING
 		f. 6 -> LAYING
+
+##Step 6
+	

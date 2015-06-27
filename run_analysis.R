@@ -1,7 +1,7 @@
 setwd("D:/Khaled/Non-Work/Lab/32.R/Getting and Cleaning Data/Project")
 
 library(data.table)
-library(dplyr)
+library(plyr)
 
 featuresDF <- read.table("./data/features.txt")
 featuresVect <- as.vector(featuresDF[,2])
@@ -41,8 +41,8 @@ data$Activity <- mapvalues(data$Activity, from=activityLabelsDF[,1], to=as.vecto
 
 colNames <- gsub("^t","Time-", colnames(data))
 colNames <- gsub("^f","FFT-", colNames)
-colNames <- gsub("-mean\\(\\)","Mean", colNames)
-colNames <- gsub("-std\\(\\)","Std", colNames)
+colNames <- gsub("-mean","Mean", colNames)
+colNames <- gsub("-std","Std", colNames)
 
 colnames(data) <- colNames
 
